@@ -1,0 +1,64 @@
+import java.util.*;
+
+class tugasArray
+{
+	public static void main (String [] args)
+	{
+		Scanner ea = new Scanner (System.in);
+		
+		String [] menu = {"SOTO AYAM", "CAP CAY", "BAKSO", "PANGSIT", "RUJAK CINGUR"};
+		int [] harga = {10000, 20000, 8000, 6000, 12000};
+		String nota = "";
+		int subtotal = 0;
+		int total = 0;
+		
+		System.out.println ("==========================================");
+		System.out.println ("\t # DAFTAR MENU MAKANAN #\t ");
+		System.out.println ("==========================================");
+		System.out.println ("Nama Makanan \t\t Daftar Harga");
+		System.out.println ("==========================================");
+		
+		for (int i=0;i<menu.length;i++)
+		{
+			System.out.println((i+1) + "." + menu [i]+" \t\t " +harga[i]);
+		}
+		
+		String jawab = "Y";
+		while (jawab.equalsIgnoreCase ("Y"))
+		{
+			System.out.println ();
+			
+			System.out.print ("Masukkan Pilihan Anda (1-5) : ");
+			int pilih = ea.nextInt ();
+			System.out.println ("------------------------------------------");
+			System.out.println ("Nama Makanan : " +menu [pilih-1]);
+			System.out.println ("------------------------------------------");
+			
+			System.out.print ("Masukkan Jumlah Pesanan Anda : ");
+			int jml = ea.nextInt ();
+			System.out.println ("------------------------------------------");
+			System.out.println ("Harga : " +harga [pilih-1]);
+			subtotal = harga [pilih-1]*jml;
+			System.out.println ("Total Yang Harus Dibayar : " +subtotal);
+			System.out.println ("------------------------------------------");
+			System.out.println ();
+			
+			nota += menu[pilih-1]+"\t\t"+jml+" Porsi\t\t"+harga[pilih-1]+"\t\t"+subtotal+"\n====================================================================\n";
+				total += subtotal;
+				System.out.print("Pesan lagi?[Y/N] : ");
+				jawab = ea.next();	
+				System.out.println();
+			
+			System.out.println("=================================================================");
+			System.out.println("\t\tNOTA PEMBAYARAN");
+			System.out.println("=================================================================");
+			System.out.println("MENU\t\tJUMLAH\t\tHARGA\t\tSUBTOTAL");
+			System.out.println("-----------------------------------------------------------------");
+			System.out.println(nota);
+			System.out.println("=================================================================");
+			System.out.println("Total Pembayaran : "+total);
+			System.out.println("=================================================================");
+			System.out.println("\t\tTHANKS");
+		}
+	}
+}
