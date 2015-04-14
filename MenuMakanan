@@ -1,0 +1,121 @@
+import java.io.*;
+
+public class MenuMakanan
+{
+ public static void main (String []args) throws IOException 
+ { 
+	BufferedReader ea = new BufferedReader (new InputStreamReader(System.in)); 
+	
+	  int[] harga = new int [5];
+	  int[] total = new int [5];
+	  int[] jml_pesanan = new int [5];
+	  int total_pembayaran = 0;
+	  int pil = 0;
+	  
+		  do 
+		{
+			System.out.println("==============================");
+			System.out.println("  | MENU MAKANAN & MINUMAN | ");
+			System.out.println("==============================");
+			System.out.println("\t1. SOTO AYAM  ");
+			System.out.println("\t2. NASI BEBEK ");
+			System.out.println("\t3. CAP CAY  ");
+			System.out.println("\t4. ES TEH   ");
+			System.out.println("\t5. ES JERUK  ");
+			System.out.println("\t6. TOTAL ");
+			System.out.println("\t7. KELUAR ");
+			System.out.print("Masukkan pilihan Anda (1-7) : ");
+			pil = Integer.parseInt(ea.readLine());
+			System.out.println();
+		   
+			switch(pil)
+			{
+				case 1:
+				harga[0] = 10000;
+				System.out.println("====================");
+				System.out.println("  | MENU |  ");
+				System.out.println("====================");
+				System.out.println(" SOTO AYAM  ");
+				System.out.println("Harga : Rp " + harga[0]);
+				System.out.print("Pesanan : ");
+				jml_pesanan[0] = Integer.parseInt(ea.readLine());
+				total[0] = harga[0]*jml_pesanan[0];
+				System.out.println("TOTAL HARGA : Rp. " + total[0]);
+				System.out.println();
+				break;
+				 
+				case 2:
+				harga[1] = 15000;
+				System.out.println("====================");
+				System.out.println(" | MENU |  ");
+				System.out.println("====================");
+				System.out.println(" NASI BEBEK  ");
+				System.out.println("Harga : Rp" + harga[1]);
+				System.out.print("Pesanan : ");
+				jml_pesanan[1] = Integer.parseInt(ea.readLine());
+				total[1] = harga[1]*jml_pesanan[1];
+				System.out.println("TOTAL HARGA : Rp. " + total[1]);
+				System.out.println();
+				break;
+			 
+				case 3:
+				harga[2] = 12000;
+				System.out.println("====================");
+				System.out.println(" | MENU | ");
+				System.out.println("====================");
+				System.out.println(" CAP CAY  ");
+				System.out.println("Harga : Rp" + harga[2]);
+				System.out.print("Pesanan : ");
+				jml_pesanan[2] = Integer.parseInt(ea.readLine());
+				total[2] = harga[2]*jml_pesanan[2];
+				System.out.println("TOTAL HARGA : Rp. " + total[2]);
+				System.out.println();
+				break;
+				
+				case 4:
+				harga[3] = 2000;
+				System.out.println("====================");
+				System.out.println(" | MENU | ");
+				System.out.println("  ES TEH  ");
+				System.out.println("Harga : Rp" + harga[3]);
+				System.out.print("Pesanan : ");
+				jml_pesanan[3] = Integer.parseInt(ea.readLine());
+				total[3] = harga[3]*jml_pesanan[3];
+				System.out.println("TOTAL HARGA : Rp. " + total[3]);
+				System.out.println();
+				break;
+			
+				case 5:
+				harga[4] = 3000;
+				System.out.println("====================");
+				System.out.println(" | MENU | ");
+				System.out.println("====================");
+				System.out.println(" ES JERUK  ");
+				System.out.println("Harga: Rp" + harga[4]);
+				System.out.print("Pesanan : ");
+				jml_pesanan[4] = Integer.parseInt(ea.readLine());
+				total[4] = harga[4]*jml_pesanan[4];
+				System.out.println("TOTAL HARGA : Rp. " + total[4]);
+				System.out.println();
+				break;
+				
+				case 6:
+				System.out.println("========================");
+				System.out.println(" | TOTAL PEMBELIAN |");
+				System.out.println("========================");
+				System.out.println("SOTO AYAM = Rp. " + total[0]);
+				System.out.println("NASI RAWON = Rp. " + total[1]);
+				System.out.println("GADO - GADO = Rp. " + total[2]);
+				System.out.println("ES TEH = Rp. " + total[3]);
+				System.out.println("ES JERUK = Rp. " + total[4]);
+				total_pembayaran = total[0]+total[1]+total[2]+total[3]+total[4];
+				System.out.println("TOTAL PEMBELIAN = Rp" + total_pembayaran);
+				System.out.println();
+				break;
+				
+				default: break;
+		   }   
+		}
+			while(pil<7);
+ }
+}
