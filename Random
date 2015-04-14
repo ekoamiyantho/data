@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Random
+{
+	public static void main (String args [])
+	{
+		Scanner ea = new Scanner (System.in);
+		System.out.print ("Masukkan Bilangannya = ");
+		
+		int a = ea.nextInt ();
+		int i=0;
+		int total = 0;
+		int bilRandom = 0;
+		while (i<a)
+		{
+			bilRandom = (int) (Math.random ()*10);
+			System.out.println ((i+1) +"=" +bilRandom);
+			total +=bilRandom;
+			i++;
+		}
+		System.out.println ("Total : " +total);
+	}
+}
